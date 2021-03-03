@@ -22,7 +22,8 @@ class MovieFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Pulp Fiction',
+            'description' => 'greates movie of all time',
         ];
     }
 }

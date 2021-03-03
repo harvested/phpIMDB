@@ -16,7 +16,6 @@ class CreateActorsTable extends Migration
         Schema::create('actors', function (Blueprint $table) {
             $table->bigInteger('actor_id');
             $table->string('name');
-            $table->string('description');
             $table->timestamps();
             $table->primary('actor_id');
             $table->unique('actor_id');

@@ -22,7 +22,7 @@ class ActorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => 'Brad Pitt',
         ];
     }
 }

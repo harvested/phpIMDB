@@ -15,4 +15,10 @@ class Actor extends Model
      * @var id
      */
     protected $primaryKey = 'actor_id';
+
+
+    public function movies()
+    {
+        return $this->hasManyThrough(Movie::class, ActorsMovies::class);
+    }
 }

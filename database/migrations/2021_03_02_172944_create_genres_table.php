@@ -18,7 +18,6 @@ class CreateGenresTable extends Migration
             $table->string('genre');
             $table->timestamps();
             $table->primary('genre_id');
-
         });
     }
 
