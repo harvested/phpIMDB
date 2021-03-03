@@ -22,7 +22,9 @@ class ActorFactory extends Factory
     public function definition()
     {
         return [
-            'name' => 'Brad Pitt',
+            'first_name' => 'Brad',
+            'last_name' => 'Pitt',
+            'description' => 'actor',
         ];
     }
 }
