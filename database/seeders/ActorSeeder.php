@@ -13,6 +13,6 @@ class ActorSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Actor::factory()->count(10)->create();
     }
 }
