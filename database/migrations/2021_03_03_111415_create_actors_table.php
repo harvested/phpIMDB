@@ -14,11 +14,11 @@ class CreateActorsTable extends Migration
     public function up()
     {
         Schema::create('actors', function (Blueprint $table) {
-            $table->bigInteger('actor_id');
-            $table->string('name');
+            $table->bigInteger('actor_id')->autoIncrement()->unique();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('description');
             $table->timestamps();
-            $table->primary('actor_id');
-            $table->unique('actor_id');
         });
     }
 
