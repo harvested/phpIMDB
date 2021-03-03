@@ -19,7 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 $authApi = Route::middleware('auth:api');
-$authApi->get('/seen/{id}', function (Request $request) {
+$authApi->post('/seen/{id}', function (Request $request) {
 	$movieId = $request->getParam('movieId');
 
 	return $request->movie();

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,12 @@ Route::get('/test', function() {
 	return view('test');
 });
 
-Route::get('/login', function() {
-	return view('login');
+Route::get('/search', function(Request $request) {
+	$param = $request->all();
+	var_dump($param); exit;
+	$searchController = new SearchController;
+	return $searchController->search($request);
 });
+
+Route::get('/actor/{actor}', [ActorController::class, 'show']);
+
