@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ActorController;
 
 /*
@@ -31,5 +32,6 @@ Route::get('/search', function(Request $request) {
 	return $searchController->search($request);
 });
 
+Route::get('/movie/{movie}', [MovieController::class, 'show']);
 Route::get('/actor/{actor}', [ActorController::class, 'show']);
 

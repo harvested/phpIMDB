@@ -13,22 +13,17 @@ class MovieController extends Controller
 	*
 	* @var Movie
 	*/
-    protected $movie;
+    // protected $movie;
 
 
-    public function __construct(Movie $movie)
+    // public function __construct(Movie $movie)
+    // {
+    //     $this->movie = $movie;
+    // }
+
+    public function show(Movie $movie)
     {
-        $this->movie = $movie;
-    }
-
-
-    public function show($id)
-    {
-    	$movie = $this->movie->find($id);
-
     	return view('movie.profile', ['movie' => $movie]);
     }
-
-    
 
 }

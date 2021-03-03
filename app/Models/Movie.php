@@ -20,4 +20,16 @@ class Movie extends Model
     {
         return $this->hasMany(Genre::class, MoviesGenres::class);
     }
+
+    /**
+        Wrapper around the 'name' property.
+        Nice way to avoid changing the DB model.
+        Normally movies have have "titles" and not "names". 
+        But since I don't want to change the DB model because sometimes that's not possible
+        we can make wrappers around the properties of the model.
+    */
+    public function title()
+    {
+        return $this->name;
+    }
 }
