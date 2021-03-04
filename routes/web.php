@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ActorController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,17 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/login', function () {
-//     return view('login');
-// })->name('login');
-
 Route::get('/search', function(Request $request) {
 	$search = $request->input('search');
 	$searchController = new SearchController;
 	return $searchController->search($search);
 });
 
-Route::get('/movie/{movie}', [MovieController::class, 'show'])->name('movie');
-Route::get('/actor/{actor}', [ActorController::class, 'show']);
+Route::get('/login', function() {
+	return view('login');
+})->name('login');
 
-// Route::post('/movie/seen/{movie}', [MovieController::class, 'seen']);
+Route::get('/movie/{movie}', [MovieController::class, 'show'])->name('movie');
+Route::get('/actor/{actor}', [ActorController::class, 'show'])->name('actor');
