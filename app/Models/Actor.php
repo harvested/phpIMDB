@@ -16,9 +16,24 @@ class Actor extends Model
      */
     protected $primaryKey = 'actor_id';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'description',
+    ];
 
     public function movies()
     {
         return $this->hasManyThrough(Movie::class, ActorsMovies::class);
+    }
+
+    public function bio()
+    {
+        return $this->description;
     }
 }
