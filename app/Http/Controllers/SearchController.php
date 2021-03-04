@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Http\MovieController;
 use App\Models\Movie;
 
 class SearchController extends Controller
@@ -16,7 +15,7 @@ class SearchController extends Controller
 	*/
     public function search(string $search)
     {
-		$movie = new Movie;
+		$movie = new Movie; // assume search for movies
 		$results = $movie->search($search);		
 		return view('movie.search', [
 			'query'  => $search,

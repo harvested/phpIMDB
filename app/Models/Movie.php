@@ -32,6 +32,7 @@ class Movie extends Model
     {
         return $this->name;
     }
+    
     /**
     *   @param string $string
     *
