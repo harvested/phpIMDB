@@ -41,11 +41,11 @@
                    phpIMDB with Laravel
                 </div>
 
-                <form action="/search" method="get">
+                <form action="/search" method="GET" id="search">
                     <div class="grid grid-cols-12 md:grid-cols-12">
                             <div class="p-8">
                                 <div class="flex items-center">
-                                  <input type="text" placeholder="type here..">
+                                  <input type="text" name="search" placeholder="type here..">
                                     <input type="submit" value="Search">
                                 </div>
 

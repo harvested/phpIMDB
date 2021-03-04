@@ -21,17 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function() {
-	return view('test');
-});
+// Route::get('/login', function () {
+//     return view('login');
+// })->name('login');
 
 Route::get('/search', function(Request $request) {
-	$param = $request->all();
-	var_dump($param); exit;
+	$search = $request->input('search');
 	$searchController = new SearchController;
-	return $searchController->search($request);
+	return $searchController->search($search);
 });
 
-Route::get('/movie/{movie}', [MovieController::class, 'show']);
+Route::get('/movie/{movie}', [MovieController::class, 'show'])->name('movie');
 Route::get('/actor/{actor}', [ActorController::class, 'show']);
 
+// Route::post('/movie/seen/{movie}', [MovieController::class, 'seen']);

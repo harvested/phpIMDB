@@ -26,4 +26,12 @@ class MovieController extends Controller
     	return view('movie.profile', ['movie' => $movie]);
     }
 
+	/**
+	* Mark movie as Seen
+	*/
+    public function seen(Movie $movie)
+    {
+    	$movie->seen();
+    }
+
 }

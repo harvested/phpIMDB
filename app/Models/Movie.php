@@ -32,4 +32,17 @@ class Movie extends Model
     {
         return $this->name;
     }
+    /**
+    *   @param string $string
+    *
+    */
+    public function search(string $string) 
+    {
+        return Movie::where('name', 'like', "%$string%")->get();  
+    }
+
+    public function seen()
+    {
+        var_dump('here');
+    }
 }
